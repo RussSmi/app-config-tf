@@ -51,7 +51,7 @@ resource "azurerm_role_assignment" "appconf_dataowner" {
 
 resource "azurerm_app_configuration_key" "appconf_key1" {
   configuration_store_id = azurerm_app_configuration.appconf.id
-  key                    = "key1"
+  key                    = "Demo/key1"
   type                   = "vault"
   label                  = "label1"
   vault_key_reference    = var.kv_secret_ref
