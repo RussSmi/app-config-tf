@@ -60,3 +60,11 @@ resource "azurerm_app_configuration_key" "appconf_key1" {
     azurerm_role_assignment.appconf_dataowner
   ]
 }
+
+resource "azurerm_app_configuration_feature" "feature1" {
+  configuration_store_id = azurerm_app_configuration.appconf.id
+  description            = "Feature 1 description"
+  name                   = "Feature 1"
+  label                  = "Test label"
+  enabled                = true
+}
