@@ -46,7 +46,13 @@ resource "azurerm_app_configuration" "appconf" {
 resource "azurerm_role_assignment" "appconf_dataowner" {
   scope                = azurerm_app_configuration.appconf.id
   role_definition_name = "App Configuration Data Owner"
-  principal_id         = data.azurerm_client_config.current.object_id
+  principal_id         = var.additoinalSpId
+}
+
+resource "azurerm_role_assignment" "appconf_dataowner_ghasp" {
+  scope                = azurerm_app_configuration.appconf.id
+  role_definition_name = "App Configuration Data Owner"
+  principal_id         = var.ghspid
 }
 
 resource "azurerm_app_configuration_key" "appconf_key1" {
@@ -68,3 +74,4 @@ resource "azurerm_app_configuration_feature" "feature1" {
   label                  = "Test label"
   enabled                = true
 }
+
