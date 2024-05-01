@@ -63,7 +63,34 @@ resource "azurerm_app_configuration_key" "appconf_key1" {
   vault_key_reference    = var.kv_secret_ref
 
   depends_on = [
-    azurerm_role_assignment.appconf_dataowner
+    azurerm_role_assignment.appconf_dataowner,
+    azurerm_role_assignment.appconf_dataowner_ghasp,
+  ]
+}
+
+resource "azurerm_app_configuration_key" "appconf_key1" {
+  configuration_store_id = azurerm_app_configuration.appconf.id
+  key                    = "Demo-key1"
+  type                   = "vault"
+  label                  = "label1"
+  vault_key_reference    = var.kv_secret_ref
+
+  depends_on = [
+    azurerm_role_assignment.appconf_dataowner,
+    azurerm_role_assignment.appconf_dataowner_ghasp,
+  ]
+}
+
+resource "azurerm_app_configuration_key" "appconf_key2" {
+  configuration_store_id = azurerm_app_configuration.appconf.id
+  key                    = "Demo-key2"
+  type                   = "kv"
+  label                  = "label1"
+  value                  = "Demo-value2"
+
+  depends_on = [
+    azurerm_role_assignment.appconf_dataowner,
+    azurerm_role_assignment.appconf_dataowner_ghasp,
   ]
 }
 
