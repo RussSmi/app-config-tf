@@ -37,7 +37,16 @@ resource "azurerm_key_vault_access_policy" "server" {
 resource "azurerm_key_vault_access_policy" "client" {
   key_vault_id = azurerm_key_vault.kv.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = data.azurerm_client_config.current.object_id
+  object_id    = var.ghspid
+
+  key_permissions    = ["Get", "Create", "Delete", "List", "Restore", "Recover", "UnwrapKey", "WrapKey", "Purge", "Encrypt", "Decrypt", "Sign", "Verify", "GetRotationPolicy"]
+  secret_permissions = ["Get", "Set", "List"]
+}
+
+resource "azurerm_key_vault_access_policy" "additional" {
+  key_vault_id = azurerm_key_vault.kv.id
+  tenant_id    = data.azurerm_client_config.current.tenant_id
+  object_id    = var.additoinalSpId
 
   key_permissions    = ["Get", "Create", "Delete", "List", "Restore", "Recover", "UnwrapKey", "WrapKey", "Purge", "Encrypt", "Decrypt", "Sign", "Verify", "GetRotationPolicy"]
   secret_permissions = ["Get", "Set", "List"]
