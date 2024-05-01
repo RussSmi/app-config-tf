@@ -1,6 +1,6 @@
 locals {
   resource_location = lower(replace(var.location, " ", ""))
-  kv_name           = "kv-${var.ident}-${var.loc}-001"
+  kv_name           = "kv-${var.ident}-${var.loc}-002"
   kv_secret_name    = "kvs-${var.ident}-${var.loc}"
   msi_name          = "msi-${var.ident}-${var.loc}"
   kv_key_name       = "kvkey-${var.ident}-${var.loc}"
