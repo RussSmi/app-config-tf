@@ -1,0 +1,107 @@
+[0m[1mmodule.key_vault.data.azurerm_client_config.current: Reading...[0m[0m
+[0m[1mmodule.app_config.data.azurerm_client_config.current: Reading...[0m[0m
+[0m[1mazurerm_resource_group.appconfig: Refreshing state... [id=/subscriptions/0fbef83c-cd34-4194-848c-f15d2b296ab3/resourceGroups/rg-appcnf-uks][0m
+[0m[1mmodule.app_config.data.azurerm_client_config.current: Read complete after 0s [id=Y2xpZW50Q29uZmlncy9jbGllbnRJZD0wNGIwNzc5NS04ZGRiLTQ2MWEtYmJlZS0wMmY5ZTFiZjdiNDY7b2JqZWN0SWQ9N2YzNmIyMjItMmZhYS00OTBhLTg1ZDItNzdmMmVlODAwMGEzO3N1YnNjcmlwdGlvbklkPTBmYmVmODNjLWNkMzQtNDE5NC04NDhjLWYxNWQyYjI5NmFiMzt0ZW5hbnRJZD0yNTBhNDdiYi0xNmU2LTRkODctYTFhYy1lOTk3ZjJmNzYyZDI=][0m
+[0m[1mmodule.key_vault.data.azurerm_client_config.current: Read complete after 0s [id=Y2xpZW50Q29uZmlncy9jbGllbnRJZD0wNGIwNzc5NS04ZGRiLTQ2MWEtYmJlZS0wMmY5ZTFiZjdiNDY7b2JqZWN0SWQ9N2YzNmIyMjItMmZhYS00OTBhLTg1ZDItNzdmMmVlODAwMGEzO3N1YnNjcmlwdGlvbklkPTBmYmVmODNjLWNkMzQtNDE5NC04NDhjLWYxNWQyYjI5NmFiMzt0ZW5hbnRJZD0yNTBhNDdiYi0xNmU2LTRkODctYTFhYy1lOTk3ZjJmNzYyZDI=][0m
+[0m[1mmodule.key_vault.azurerm_user_assigned_identity.kvmsi: Refreshing state... [id=/subscriptions/0fbef83c-cd34-4194-848c-f15d2b296ab3/resourceGroups/rg-appcnf-uks/providers/Microsoft.ManagedIdentity/userAssignedIdentities/msi-appcnf-uks][0m
+[0m[1mmodule.key_vault.azurerm_key_vault.kv: Refreshing state... [id=/subscriptions/0fbef83c-cd34-4194-848c-f15d2b296ab3/resourceGroups/rg-appcnf-uks/providers/Microsoft.KeyVault/vaults/kv-appcnf-uks-003][0m
+[0m[1mmodule.key_vault.azurerm_key_vault_secret.kvs: Refreshing state... [id=https://kv-appcnf-uks-003.vault.azure.net/secrets/kvs-appcnf-uks/4073eeb75fb843bc9ec96165f30c68d1][0m
+[0m[1mmodule.key_vault.azurerm_key_vault_access_policy.server: Refreshing state... [id=/subscriptions/0fbef83c-cd34-4194-848c-f15d2b296ab3/resourceGroups/rg-appcnf-uks/providers/Microsoft.KeyVault/vaults/kv-appcnf-uks-003/objectId/26a181f4-b875-4c96-9922-70bcdbce8c84][0m
+[0m[1mmodule.key_vault.azurerm_key_vault_access_policy.client: Refreshing state... [id=/subscriptions/0fbef83c-cd34-4194-848c-f15d2b296ab3/resourceGroups/rg-appcnf-uks/providers/Microsoft.KeyVault/vaults/kv-appcnf-uks-003/objectId/dc9d8e7e-28b4-4c3a-bd23-3b5568670aa5][0m
+[0m[1mmodule.key_vault.azurerm_key_vault_access_policy.additional: Refreshing state... [id=/subscriptions/0fbef83c-cd34-4194-848c-f15d2b296ab3/resourceGroups/rg-appcnf-uks/providers/Microsoft.KeyVault/vaults/kv-appcnf-uks-003/objectId/7f36b222-2faa-490a-85d2-77f2ee8000a3][0m
+[0m[1mmodule.key_vault.azurerm_key_vault_key.key: Refreshing state... [id=https://kv-appcnf-uks-003.vault.azure.net/keys/kvkey-appcnf-uks/400b682bdc4f44679cf765edc8ef7c72][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # module.app_config.azurerm_app_configuration.appconf[0m will be created
+[0m  [32m+[0m[0m resource "azurerm_app_configuration" "appconf" {
+      [32m+[0m[0m endpoint                   = (known after apply)
+      [32m+[0m[0m id                         = (known after apply)
+      [32m+[0m[0m local_auth_enabled         = true
+      [32m+[0m[0m location                   = "uksouth"
+      [32m+[0m[0m name                       = "ac-appcnf-uks"
+      [32m+[0m[0m primary_read_key           = (known after apply)
+      [32m+[0m[0m primary_write_key          = (known after apply)
+      [32m+[0m[0m public_network_access      = "Enabled"
+      [32m+[0m[0m purge_protection_enabled   = false
+      [32m+[0m[0m resource_group_name        = "rg-appcnf-uks"
+      [32m+[0m[0m secondary_read_key         = (known after apply)
+      [32m+[0m[0m secondary_write_key        = (known after apply)
+      [32m+[0m[0m sku                        = "standard"
+      [32m+[0m[0m soft_delete_retention_days = 1
+      [32m+[0m[0m tags                       = {
+          [32m+[0m[0m "environment" = "development"
+        }
+
+      [32m+[0m[0m encryption {
+          [32m+[0m[0m identity_client_id       = "aa23796e-ef18-448f-a815-cf3e5c4c1a26"
+          [32m+[0m[0m key_vault_key_identifier = "https://kv-appcnf-uks-003.vault.azure.net/keys/kvkey-appcnf-uks/400b682bdc4f44679cf765edc8ef7c72"
+        }
+
+      [32m+[0m[0m identity {
+          [32m+[0m[0m identity_ids = [
+              [32m+[0m[0m "/subscriptions/0fbef83c-cd34-4194-848c-f15d2b296ab3/resourceGroups/rg-appcnf-uks/providers/Microsoft.ManagedIdentity/userAssignedIdentities/msi-appcnf-uks",
+            ]
+          [32m+[0m[0m principal_id = (known after apply)
+          [32m+[0m[0m tenant_id    = (known after apply)
+          [32m+[0m[0m type         = "UserAssigned"
+        }
+
+      [32m+[0m[0m replica {
+          [32m+[0m[0m endpoint = (known after apply)
+          [32m+[0m[0m id       = (known after apply)
+          [32m+[0m[0m location = "westus"
+          [32m+[0m[0m name     = "replica1"
+        }
+    }
+
+[1m  # module.app_config.azurerm_app_configuration_feature.feature1[0m will be created
+[0m  [32m+[0m[0m resource "azurerm_app_configuration_feature" "feature1" {
+      [32m+[0m[0m configuration_store_id = (known after apply)
+      [32m+[0m[0m description            = "Feature 1 description"
+      [32m+[0m[0m enabled                = true
+      [32m+[0m[0m etag                   = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m key                    = (known after apply)
+      [32m+[0m[0m label                  = "Test label"
+      [32m+[0m[0m locked                 = false
+      [32m+[0m[0m name                   = "Feature 1"
+    }
+
+[1m  # module.app_config.azurerm_app_configuration_key.appconf_key1[0m will be created
+[0m  [32m+[0m[0m resource "azurerm_app_configuration_key" "appconf_key1" {
+      [32m+[0m[0m configuration_store_id = (known after apply)
+      [32m+[0m[0m content_type           = (known after apply)
+      [32m+[0m[0m etag                   = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m key                    = "Demo-key1"
+      [32m+[0m[0m label                  = "label1"
+      [32m+[0m[0m locked                 = false
+      [32m+[0m[0m type                   = "vault"
+      [32m+[0m[0m vault_key_reference    = "https://kv-appcnf-uks-003.vault.azure.net/secrets/kvs-appcnf-uks"
+    }
+
+[1m  # module.app_config.azurerm_role_assignment.appconf_dataowner[0m will be created
+[0m  [32m+[0m[0m resource "azurerm_role_assignment" "appconf_dataowner" {
+      [32m+[0m[0m id                               = (known after apply)
+      [32m+[0m[0m name                             = (known after apply)
+      [32m+[0m[0m principal_id                     = "7f36b222-2faa-490a-85d2-77f2ee8000a3"
+      [32m+[0m[0m principal_type                   = (known after apply)
+      [32m+[0m[0m role_definition_id               = (known after apply)
+      [32m+[0m[0m role_definition_name             = "App Configuration Data Owner"
+      [32m+[0m[0m scope                            = (known after apply)
+      [32m+[0m[0m skip_service_principal_aad_check = (known after apply)
+    }
+
+[1mPlan:[0m 4 to add, 0 to change, 0 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tf.plan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tf.plan"

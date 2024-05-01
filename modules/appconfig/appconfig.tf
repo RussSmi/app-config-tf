@@ -1,6 +1,6 @@
 locals {
   resource_location = lower(replace(var.location, " ", ""))
-  ac_name           = "ac-${var.ident}-${var.loc}"
+  ac_name           = "ac-${var.ident}-${var.loc}-${var.instance}"
 }
 
 data "azurerm_client_config" "current" {}

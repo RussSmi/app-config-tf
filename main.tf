@@ -1,6 +1,6 @@
 locals {
   resource_location   = lower(replace(var.location, " ", ""))
-  resource_group_name = "rg-${var.ident}-${var.loc}"
+  resource_group_name = "rg-${var.ident}-${var.loc}-${var.instance}"
 }
 #-------------------------------
 # Create main resource group
@@ -20,6 +20,7 @@ module "key_vault" {
   resource_group_name        = azurerm_resource_group.appconfig.name
   secret_value               = var.secret_value
   soft_delete_retention_days = var.soft_delete_retention_days
+  instance                   = var.instance
 }
 
 module "app_config" {
@@ -32,4 +33,5 @@ module "app_config" {
   kv_msi_id           = module.key_vault.kv_msi_id
   kv_msi_client_id    = module.key_vault.kv_msi_client_id
   kv_key_id           = module.key_vault.kv_key_id
+  instance            = var.instance
 }

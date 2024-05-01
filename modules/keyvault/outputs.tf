@@ -20,5 +20,5 @@ output "kv_msi_client_id" {
 
 output "kv_key_id" {
   description = "Value of the key vault key id"
-  value       = azurerm_key_vault_key.key.versionless_id
+  value       = azurerm_key_vault_key.key.id
 }

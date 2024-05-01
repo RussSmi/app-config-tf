@@ -42,11 +42,17 @@ variable "secret_value" {
 variable "ghspid" {
   type        = string
   description = "The principal id of the GitHub service principal"
-  default = "dc9d8e7e-28b4-4c3a-bd23-3b5568670aa5"
+  default     = "dc9d8e7e-28b4-4c3a-bd23-3b5568670aa5"
 }
 
 variable "additoinalSpId" {
   type        = string
   description = "The principal id of the additional service principal"
-  default = "7f36b222-2faa-490a-85d2-77f2ee8000a3"
+  default     = "7f36b222-2faa-490a-85d2-77f2ee8000a3"
+}
+
+variable "instance" {
+  type        = string
+  description = "Instance no"
+  default     = "004"
 }

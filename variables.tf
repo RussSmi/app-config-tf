@@ -26,3 +26,9 @@ variable "soft_delete_retention_days" {
   description = "The number of days to retain soft deleted keys"
   default     = 7
 }
+
+variable "instance" {
+  type        = string
+  description = "Instance no"
+  default     = "004"
+}

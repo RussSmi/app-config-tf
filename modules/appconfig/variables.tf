@@ -44,3 +44,9 @@ variable "kv_key_id" {
   description = "The keyvault key id"
 
 }
+
+variable "instance" {
+  type        = string
+  description = "Instance no"
+  default     = "004"
+}
