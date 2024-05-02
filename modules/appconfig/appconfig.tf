@@ -82,6 +82,19 @@ resource "azurerm_app_configuration_key" "appconf_key2" {
   ]
 }
 
+resource "azurerm_app_configuration_key" "appconf_key3" {
+  configuration_store_id = azurerm_app_configuration.appconf.id
+  key                    = "Demo-key3"
+  type                   = "kv"
+  label                  = "label2"
+  value                  = "Demo-value3"
+
+  depends_on = [
+    azurerm_role_assignment.appconf_dataowner,
+    azurerm_role_assignment.appconf_dataowner_ghasp,
+  ]
+}
+
 resource "azurerm_app_configuration_feature" "feature1" {
   configuration_store_id = azurerm_app_configuration.appconf.id
   description            = "Feature 1 description"
